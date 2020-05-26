@@ -6,17 +6,18 @@ class CreateGameForm extends React.Component{
         this.state = {
             newGameTitle: '',
             newGameImageUrl:'',
-            newGameDescription:''
+            newGameDescription:'',
+    
         }
     }
     encodeFormData(){
         const urlencoded = new URLSearchParams();
-
+        
         urlencoded.append("title", this.state.newGameTitle);
         urlencoded.append("imageUrl", this.state.newGameImageUrl);
         urlencoded.append("description", this.state.newGameDescription);
-    
-        return urlencoded   
+       
+        return urlencoded 
     }
     render(){
         return(

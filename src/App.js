@@ -1,5 +1,5 @@
 import React from 'react';
-//import logo from './logo.svg';
+import logo from './logo.svg';
 import { CreateGameForm} from './CreateForm.js'
 import {Game} from './Game.js';
 import {FetchApi} from './FetchApi.js'
@@ -13,7 +13,11 @@ class App extends React.Component{
     this.state = {
           games: []
     }
-    this.displayGames()
+    //this.displayGames()
+  }
+  componentDidMount(){
+    this.displayGames();
+    
   }
   handleCreateBtnClick =(urlencoded) =>{
     this.fetchApi.createNewGameRequest(urlencoded).then(() => {
@@ -21,8 +25,11 @@ class App extends React.Component{
     })
   }
   handleDeleteBtnClick = (game) => {
+    
+   // document.getElementById(game._id).remove();
     this.fetchApi.deleteGameOnServer(game._id).then(() => {
     this.displayGames();
+    //console.log('game removed');
     })
   }
   handleSaveChangesBtnClick = (id, urlencoded) => {

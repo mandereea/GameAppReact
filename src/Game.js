@@ -13,7 +13,7 @@ class Game extends React.Component{
     } 
     render(){
         return(
-            <div >
+            <div id={this.props.id}>
                 <h1>{this.props.title}</h1>
                 <img src={this.props.imageUrl} alt="game cover"/>
                 <p>{this.props.description}</p>
